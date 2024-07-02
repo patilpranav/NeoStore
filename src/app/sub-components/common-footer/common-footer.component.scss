@@ -1,0 +1,142 @@
+button {
+    width: 271px;
+    height: 36px;
+    background-color: #BB0100;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 16px;
+    border: none;
+    border-radius: 2px;
+}
+.link-section {
+    background-color: black;
+    height: 367px;
+    padding-top: 40px;
+
+    .sections {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 100%;
+
+        .contact-section {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+
+            .footer-title {
+                display: inline-block;
+                color: #BB0100;
+                font-size: 3rem;
+                font-weight: 700;
+                line-height: 45px;
+                text-decoration: none;
+                margin-bottom: 33px;
+            }
+
+            .input-container {
+                display: flex;
+                background-color: white;
+                width: 326px;
+                padding: 2px;
+                border-radius: 2px;
+                gap: 5px;
+                padding-inline: 4px;
+                justify-content: space-between;
+                margin-bottom: 40px;
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                input {
+                    border: none;
+                    width: 55%;
+                    padding: 5px;
+                    outline: none;
+                }
+
+                input::placeholder {
+                    color: #BB0100;
+                    font-size: 1.4rem;
+                    line-height: 1.6rem;
+                    font-weight: 500;
+                }
+
+                button {
+                    width: 98px;
+                    font-weight: 500;
+                    font-size: 1.4rem;
+                    line-height: 1.6rem;
+                    margin-right: 0;
+                    margin-left: auto;
+
+                }
+            }
+
+            .contact-container {
+                color: white;
+                display: flex;
+                flex-direction: column;
+                font-size: 1.4rem;
+                line-height: 1.34rem;
+                font-weight: 300;
+                height: 26%;
+                justify-content: space-between;
+
+            }
+
+
+        }
+
+        .links {
+            width: 15%;
+            color: white;
+            
+
+            .navigation {
+
+                .nav-title {
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    line-height: 1.436rem;
+                    text-transform: uppercase;
+                    margin-bottom: 40px;
+                    
+                    
+                }
+
+                .link-list {
+                    list-style: none;
+                    font-weight: 300;
+                    line-height: 1.34rem;
+                    font-size: 1.5rem;
+                    padding-left: 0;
+                    
+                    .list-item {
+                        margin-bottom: 27px;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+  
+.footer-markup {
+    background-color: #BB0100;
+    height: 53px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.34rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
