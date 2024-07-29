@@ -1,8 +1,11 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthServiceService } from '../services/auth-service.service';
+import { Observable } from 'rxjs';
 
-export const preventLoginGuard: CanActivateFn = (route, state) => {
+export const preventLoginGuard: CanActivateFn = (route, state): boolean | 
+Observable<boolean> | 
+Promise<boolean> => {
 
   const authServ = inject(AuthServiceService);
   const router = inject(Router);

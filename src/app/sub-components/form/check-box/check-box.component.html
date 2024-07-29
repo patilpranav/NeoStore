@@ -1,0 +1,5 @@
+<input class="form-check-input"
+ [type]="inputModel.type"
+ (change)="checkValue($event)"
+ (click)="onTouched()">
+<label class="form-check-label" *ngIf="inputModel.label">{{inputModel.label}}</label>

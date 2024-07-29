@@ -1,0 +1,9 @@
+<div>
+   <label *ngIf="inputModel.label">{{inputModel.label}}</label>
+   <input class="form-control"
+    [type]="inputModel.type"
+   [placeholder]="inputModel.placeHolder"
+   (input)="onInput($event)"
+   (click)="onTouched()"> 
+   <ng-content *ngIf="inputModel.forgotPassword"></ng-content>
+</div>

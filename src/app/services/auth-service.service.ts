@@ -7,7 +7,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthServiceService {
 
-  users = [{email: 'patilpranav050@gmail.com', password:9833273671}, {email: 'patilpranav900@gmail.com', password:7021327073}];
+  users = [{email: 'patilpranav050@gmail.com', password:9833273671}, {email: 'patilpranav900@gmail.com', password:7021327073},
+    {email:'pp',password:1}
+  ];
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
   constructor(private router: Router) {

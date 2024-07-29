@@ -9,11 +9,14 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonFooterComponent } from './sub-components/common-footer/common-footer.component';
 import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { LoggerDirective } from './logger.directive';
+import { FormComponent } from './sub-components/form/form.component';
+import { InputTextComponent } from './sub-components/form/input-text/input-text.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { CheckBoxComponent } from './sub-components/form/check-box/check-box.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,17 @@ import { LoggerDirective } from './logger.directive';
     CartComponent,
     CheckoutPageComponent,
     CommonFooterComponent,
-    LoggerDirective
+    FormComponent,
+    InputTextComponent,
+    SignUpComponent,
+    CheckBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
