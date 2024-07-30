@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SignupFieldsDefinition } from '../../fields-definition/signup-fields-definition';
 
 @Component({
@@ -24,8 +24,8 @@ export class SignUpComponent implements OnInit {
     this.signUpForm = this.fb.group ({
       firstName: [null,[Validators.required]],
       lastName: [null, Validators.required],
-      email:[null, Validators.required],
-      password:[null, Validators.required],
+      email:[null, [Validators.required]],
+      password:[null, [Validators.required, Validators.minLength(8), this.passwordValidate]],
       agreeBox:[false, Validators.requiredTrue]
     })
   }
@@ -42,4 +42,11 @@ export class SignUpComponent implements OnInit {
   signUp() {
     console.log(this.signUpForm)
   }
+
+  passwordValidate(control: AbstractControl) {
+    if(control.value === 'pranavpatil') {
+      return {easyPassword: true}
+    }
+    return null
+  } 
 }

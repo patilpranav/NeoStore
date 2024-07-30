@@ -6,4 +6,10 @@
    (input)="onInput($event)"
    (click)="onTouched()"> 
    <ng-content *ngIf="inputModel.forgotPassword"></ng-content>
+   <ng-container *ngIf="ngControl.touched || ngControl.dirty">
+      <ng-container *ngFor="let error of errorList">
+         <small>{{errorMessage[error]}}</small>
+      </ng-container>
+   </ng-container>
+   
 </div>

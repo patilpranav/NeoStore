@@ -39,4 +39,8 @@ export class AuthServiceService {
     this.isAuthenticatedSubject.next(false);
     this.router.navigate(['/login'])
   }
+
+  getUsers() {
+    return [...this.users]
+  }
 }

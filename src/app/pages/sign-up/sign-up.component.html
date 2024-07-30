@@ -2,7 +2,9 @@
     <div class="form-container">
         <app-form [formModel]="signUpFormModel"></app-form>
         <div class="btn-container">
-            <button class="btn common-btn"  (click)="signUp()" type="submit">Continue</button>
+            <button class="btn common-btn"
+            [disabled]="signUpForm.invalid"
+              (click)="signUp()" type="submit">Continue</button>
         </div>
     
         <div class="signin-link">

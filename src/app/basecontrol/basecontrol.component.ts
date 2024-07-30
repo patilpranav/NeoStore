@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+// basecontrol.component.ts
+import { Component, Optional, Self } from '@angular/core';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-basecontrol',
@@ -7,18 +8,19 @@ import { ControlValueAccessor } from '@angular/forms';
   styles: ``
 })
 export abstract class BasecontrolComponent implements ControlValueAccessor {
-  disabled!:boolean;
-  value:any;
-  onChange:(value:any) => void = () => {};
-  onTouched:() => void = () => {};
+  disabled!: boolean;
+  value: any;
+  onChange: (value: any) => void = () => {};
+  onTouched: () => void = () => {};
 
-  constructor() {
+  constructor(@Self() @Optional() public ngControl: NgControl) {
+    this.ngControl.valueAccessor = this;
   }
 
-  abstract writeValue(value:any) : void
+  abstract writeValue(value: any): void;
 
   registerOnChange(fn: any): void {
-    this.onChange = fn
+    this.onChange = fn;
   }
 
   registerOnTouched(fn: any): void {

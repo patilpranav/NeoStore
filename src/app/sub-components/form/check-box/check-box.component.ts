@@ -8,13 +8,6 @@ import { TextInputModel } from '../../../models/text-input-model';
   selector: 'app-check-box',
   templateUrl: './check-box.component.html',
   styleUrl: './check-box.component.scss',
-  providers: [
-    {
-      provide:NG_VALUE_ACCESSOR,
-      useExisting:CheckBoxComponent,
-      multi: true
-    }
-  ]
 })
 export class CheckBoxComponent extends BasecontrolComponent {
   @Input() inputModel!: TextInputModel;
