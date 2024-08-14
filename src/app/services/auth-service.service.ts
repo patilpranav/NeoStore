@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,10 @@ export class AuthServiceService {
 
   getUsers() {
     return [...this.users]
+  }
+
+  addUsers(user:User) {
+    const {email, password} = user;
+    this.users.push({email, password});
   }
 }

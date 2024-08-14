@@ -4,8 +4,10 @@
     [type]="inputModel.type"
    [placeholder]="inputModel.placeHolder"
    (input)="onInput($event)"
-   (click)="onTouched()"> 
-   <ng-content *ngIf="inputModel.forgotPassword"></ng-content>
+   (click)="onTouched()"
+   [style.border]="ngControl.errors && ngControl.touched ? '2px solid red': 'none'"> 
+   <ng-container *ngTemplateOutlet="passwordLink">
+   </ng-container>
    <ng-container *ngIf="ngControl.touched || ngControl.dirty">
       <ng-container *ngFor="let error of errorList">
          <small>{{errorMessage[error]}}</small>

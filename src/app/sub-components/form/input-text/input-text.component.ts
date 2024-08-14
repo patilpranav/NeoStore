@@ -1,5 +1,5 @@
 // input-text.component.ts
-import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
+import { Component, ContentChild, forwardRef, Input, Optional, Self, TemplateRef } from '@angular/core';
 import { BasecontrolComponent } from '../../../basecontrol/basecontrol.component';
 import { NG_VALUE_ACCESSOR, NgControl } from '@angular/forms';
 import { TextInputModel } from '../../../models/text-input-model';
@@ -14,6 +14,7 @@ import { ErrorMessage } from '../../../models/error-message';
 })
 export class InputTextComponent extends BasecontrolComponent {
   @Input() inputModel!: TextInputModel;
+  @ContentChild('forgotPassowrd', {read:TemplateRef}) passwordLink!: TemplateRef<any>
 
   writeValue(value: any): void {
     this.value = value;

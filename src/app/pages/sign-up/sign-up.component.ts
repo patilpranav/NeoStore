@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SignupFieldsDefinition } from '../../fields-definition/signup-fields-definition';
+import { AuthServiceService } from '../../services/auth-service.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,7 +14,7 @@ export class SignUpComponent implements OnInit {
   signupFieldsDefinition!: SignupFieldsDefinition
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthServiceService) {
 
   }
 
@@ -40,7 +41,10 @@ export class SignUpComponent implements OnInit {
 
 
   signUp() {
-    console.log(this.signUpForm)
+    if (this.signUpForm.valid) {
+      const {agreeBox,...userObj} = this.signUpForm.getRawValue()
+      this.authService.addUsers(userObj);
+    }
   }
 
   passwordValidate(control: AbstractControl) {

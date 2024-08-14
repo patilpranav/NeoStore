@@ -13,7 +13,9 @@
                 <ng-container *ngSwitchCase="'password'">
                     <div class="formGroup">
                         <app-input-text [inputModel]="field" [formControlName]="field.formControlName">
-                            <small id="emailHelp" class="form-text text-muted"><a href="">Forget Password</a></small>
+                            <ng-template #forgotPassowrd>
+                                <small id="emailHelp" class="form-text text-muted"><a href="">Forgot Password</a></small>
+                            </ng-template>
                         </app-input-text>
                     </div>
                 </ng-container>
